@@ -29,11 +29,20 @@
               <table border="0" align="center" with="100%">
 								<tr>
 									<td colspan="7">
-										<h3><b>Laporan Pemeriksaan Tahun <?php
-										echo $thn; ?> <b></h3>
+										<h3><b>Rekapitulasi Tahunan Hasil Pemeriksaan Sarana <b></h3>
 									</td>
 								</tr>
 							</table>
+
+							<table border="0" align="center" width="100%">
+									<tr>
+										<td colspan="5">
+											<span style="padding-right:47em">Tahun : <?php
+											echo $thn; ?></span>
+											</td>
+									</tr>
+							</tr>
+						</table>
 
 							<table align="center" border="1" width="100%">
 								<thead>

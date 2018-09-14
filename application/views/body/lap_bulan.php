@@ -29,9 +29,7 @@
               <table border="0" align="center" with="100%">
 								<tr>
 									<td colspan="7">
-										<h3><b>Laporan Hasil Pemeriksaan Per Bulan <?php
-										echo $bln; ?> Tahun <?php
-										echo $thn; ?> <b></h3>
+										<h3><b>Laporan Bulanan Pemeriksaan Sarana <b></h3>
 									</td>
 								</tr>
 							</table>
