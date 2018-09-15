@@ -52,28 +52,28 @@
 										</tr>
 								</tr>
 							</table>
-							<table align="center" border="1" width="100%">
+							<table align="center" border="1" width="100%" style="border-collapse:unset">
 								<thead>
 								<tr>
-									<th><b>No</b></th>
-										<th><b>No Surat Tugas</b></th>
-										<th><b>Kegiatan</b></th>
-										<th><b>Keterangan</b></th>
-										<th><b>Tanggal Periksa</b></th>
-										<th><b>Kab/Kota</b></th>
-										<th><b>Tanggal Surattugas</b></th>
+									<th style="text-align : center"><b>No</b></th>
+										<th style="text-align : center"><b>No Surat Tugas</b></th>
+										<th style="text-align : center"><b>Kegiatan</b></th>
+										<th style="text-align : center"><b>Keterangan</b></th>
+										<th style="text-align : center"><b>Tanggal Periksa</b></th>
+										<th style="text-align : center"><b>Kab/Kota</b></th>
+										<th style="text-align : center"><b>Tanggal Surattugas</b></th>
 								</tr>
 								</thead>
 								<tbody>
 							<?php $no = 0; foreach($dataperiksa_petugas as $row) : $no++;?>
 		 <tr>
-			 <td><?php echo $no;?></td>
-			 <td><?php echo $row->nosurattugas;?></td>
-			 <td><?php echo $row->namakegiatan;?></td>
-			 <td><?php echo $row->keterangan;?></td>
-			 <td><?php echo $row->tglpemeriksaan;?></td>
-			 <td><?php echo $row->namakabkota;?></td>
-			 <td><?php echo $row->tglsurattugas;?></td>
+			 <td style="text-align : center"><?php echo $no;?></td>
+			 <td style="text-align : center"><?php echo $row->nosurattugas;?></td>
+			 <td style="text-align : center"><?php echo $row->namakegiatan;?></td>
+			 <td style="text-align : center"><?php echo $row->keterangan;?></td>
+			 <td style="text-align : center"><?php echo $row->tglpemeriksaan;?></td>
+			 <td style="text-align : center"><?php echo $row->namakabkota;?></td>
+			 <td style="text-align : center"><?php echo $row->tglsurattugas;?></td>
 	 </tr>
 	 <?php endforeach;?>
 		</table>
