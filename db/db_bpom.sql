@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 21, 2018 at 05:02 PM
+-- Generation Time: Sep 21, 2018 at 07:40 PM
 -- Server version: 10.1.33-MariaDB
 -- PHP Version: 7.2.6
 
@@ -35,17 +35,16 @@ CREATE TABLE `thasilpemeriksaan` (
   `hasil` varchar(50) NOT NULL,
   `Keterangan` varchar(50) NOT NULL,
   `tglinput` date NOT NULL,
-  `foto` varchar(255) NOT NULL
+  `foto` varchar(255) NOT NULL,
+  `vidio` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `thasilpemeriksaan`
 --
 
-INSERT INTO `thasilpemeriksaan` (`idhasilpemeriksaan`, `idpemeriksaan`, `idsarana`, `hasil`, `Keterangan`, `tglinput`, `foto`) VALUES
-(1, 4, 1, 'MK', 'OOOHHH', '2018-09-03', 'semenpadang.jpg'),
-(9, 4, 1, 'MK', 'TES GALERYAA', '2018-09-21', 'komentar_penguji_1_0011.jpg'),
-(10, 4, 1, 'MK', 'OOOHHH', '2018-09-21', '0011.jpg');
+INSERT INTO `thasilpemeriksaan` (`idhasilpemeriksaan`, `idpemeriksaan`, `idsarana`, `hasil`, `Keterangan`, `tglinput`, `foto`, `vidio`) VALUES
+(12, 4, 1, 'MK', 'ASD', '2018-09-21', 'komentar_penguji_2_0012.jpg', 'HTTPS://WWW.YOUTUBE.COM/WATCH?V=VR33NNDDK6E');
 
 -- --------------------------------------------------------
 
@@ -339,7 +338,7 @@ ALTER TABLE `tuser`
 -- AUTO_INCREMENT for table `thasilpemeriksaan`
 --
 ALTER TABLE `thasilpemeriksaan`
-  MODIFY `idhasilpemeriksaan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `idhasilpemeriksaan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `tjabatan`

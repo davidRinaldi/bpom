@@ -77,6 +77,7 @@ function __construct(){
   $idsarana = strtoupper(trim($this->input->post('idsarana')));
   $hasilperiksa = strtoupper(trim($this->input->post('kodehasil')));
   $keterangan = strtoupper(trim($this->input->post('keterangan')));
+  $vidio = strtoupper(trim($this->input->post('vidio')));
   $tglinput = strtoupper(trim($this->input->post('tglinput')));
 
   $config['upload_path']          = APPPATH. '../assets/dokpemeriksaan/';
@@ -105,7 +106,7 @@ function __construct(){
    $this->email->subject('Pemberitahuan Hasil Pemeriksaan Terbaru Untuk Admin/Pimpinan');
    $this->email->attach($letak_file, $judul);
    $this->email->message('Hasil Pemeriksaan Terbaru Telah Diinputkan Oleh Petugas ,<br /> Silahkan Cek Aplikasi SIPHPSDP Balai Besar Pengawas Obat dan Makanan (BBPOM) di Padang untuk mengetahui informasi lebih rinci.
-   <br />Terimakasih');
+   <br />Terimakasih <br /> Dokumentasi vidio dapat dihihat di'.$vidio.'');
    $this->email->send();
  }
 
@@ -114,6 +115,7 @@ function __construct(){
   $data['hasil'] = $hasilperiksa;
  	$data['keterangan'] = $keterangan;
   $data['tglinput'] = $tglinput;
+  $data['vidio'] = $vidio;
   $data['foto'] = $this->upload->file_name;
 //var_dump($data);
 //die();

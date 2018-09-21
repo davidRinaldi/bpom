@@ -66,7 +66,7 @@ class Model_app extends CI_Model{
     public function datahasilperiksa()
     {
     $query = $this->db->query("SELECT
-      thasilpemeriksaan.tglinput,thasilpemeriksaan.idpemeriksaan,tpemeriksaan.nosurattugas,tpemeriksaan.idkegiatan,tkegiatan.namakegiatan,thasilpemeriksaan.idsarana,tsarana.namasarana,tsarana.alamat,tsarana.namapemilik,tsarana.idkabkota,tkabkota.namakabkota,tsarana.idjenissarana,tjenissarana.namajenissarana,thasilpemeriksaan.hasil,thasilpemeriksaan.keterangan,thasilpemeriksaan.tglinput,thasilpemeriksaan.foto FROM tjenissarana,tsarana,tkabkota,thasilpemeriksaan,tpemeriksaan,tkegiatan WHERE thasilpemeriksaan.idpemeriksaan=tpemeriksaan.idpemeriksaan
+      thasilpemeriksaan.tglinput,thasilpemeriksaan.idpemeriksaan,tpemeriksaan.nosurattugas,tpemeriksaan.idkegiatan,tkegiatan.namakegiatan,thasilpemeriksaan.idsarana,tsarana.namasarana,tsarana.alamat,tsarana.namapemilik,tsarana.idkabkota,tkabkota.namakabkota,tsarana.idjenissarana,tjenissarana.namajenissarana,thasilpemeriksaan.hasil,thasilpemeriksaan.keterangan,thasilpemeriksaan.tglinput,thasilpemeriksaan.foto,thasilpemeriksaan.vidio FROM tjenissarana,tsarana,tkabkota,thasilpemeriksaan,tpemeriksaan,tkegiatan WHERE thasilpemeriksaan.idpemeriksaan=tpemeriksaan.idpemeriksaan
        AND tpemeriksaan.idkegiatan=tkegiatan.idkegiatan AND thasilpemeriksaan.idsarana=tsarana.idsarana and tsarana.idkabkota=tkabkota.idkabkota AND tsarana.idjenissarana=tjenissarana.idjenissarana");
     return $query->result();
     }

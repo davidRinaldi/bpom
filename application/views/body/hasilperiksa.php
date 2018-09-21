@@ -29,6 +29,7 @@
 										<th data-field="ket" data-sortable="true">Keterangan</th>
 										<th data-field="tglpelaporan" data-sortable="true">Tanggal Pelaporan</th>
 										<th data-field="fot" data-sortable="true">Foto Dokumentasi</th>
+										<th data-field="vidio" data-sortable="true">Link Vidio Dokumentasi</th>
 						    </tr>
                             </thead>
                             <tbody>
@@ -52,6 +53,7 @@
 										 <td><?php
 										  $format = date('d-m-Y', strtotime($row->tglinput)); echo $format; ?></td>
 											<td ><img src="<?php echo base_url(); ?>assets/dokpemeriksaan/<?php echo $row->foto; ?>" width="50" height="50" /></td>
+											<td><a href="<?php echo $row->vidio;?>" class="btn btn-default">Lihat Vidio</a></td>
 							        <td>
 						    </tr>
 						    <?php endforeach;?>

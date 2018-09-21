@@ -40,6 +40,11 @@
 					</div>
 
 					<div class="form-group">
+					<label>Link Vidio</label>
+					<input class="form-control" name="vidio" placeholder="Link Vidio">
+					</div>
+
+					<div class="form-group">
 						<label>Foto (jpg|jpeg|png)</label>
 						<input type="file" name="file_surat"  multiple="multiple"/>
 					</div>
@@ -48,7 +53,7 @@
 						<label>Tanggal Input : <?php echo date('d-m-Y'); ?></label>
 						<input type="hidden" name="tglinput" value="<?php echo date('Y-m-d'); ?>">
 					</div>
-					
+
 					<button type="submit" class="btn btn-primary">Simpan</button>
 						<a href="<?php echo base_url();?>hasilperiksa/hasilperiksa_list"  class="btn btn-default">Batal</a>
 
