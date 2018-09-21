@@ -79,6 +79,23 @@ function __construct(){
   $keterangan = strtoupper(trim($this->input->post('keterangan')));
   $tglinput = strtoupper(trim($this->input->post('tglinput')));
 
+  $config['upload_path']          = APPPATH. '../assets/dokpemeriksaan/';
+  $config['allowed_types']        = 'jpg|jpeg|png';
+  //$config['file_name'] = url_title($this->input->post('file_upload'));
+
+  $this->load->library('upload',$config);
+  if (!$this->upload->do_upload('file_surat'))
+  {
+    $error = array('error' => $this->upload->display_errors());
+    //tampilkan error
+    //$this->load->view('simpanupdate', $error);
+  }
+
+  $judul =  'Dokumentasi';
+  $file = $this->upload->data();
+  $nama_file =  $this->upload->file_name;
+  $letak_file = './assets/dokpemeriksaan/'.$nama_file.'';
+
   $data8=$this->model_app->dataemail2();
   foreach ($data8 as $row) {
 		// kirim email konfirmasi
@@ -86,6 +103,7 @@ function __construct(){
     $this->email->from('info.bpomsumbar@gmail.com'); //change it
    $this->email->to($row->email); //change it
    $this->email->subject('Pemberitahuan Hasil Pemeriksaan Terbaru Untuk Admin/Pimpinan');
+   $this->email->attach($letak_file, $judul);
    $this->email->message('Hasil Pemeriksaan Terbaru Telah Diinputkan Oleh Petugas ,<br /> Silahkan Cek Aplikasi SIPHPSDP Balai Besar Pengawas Obat dan Makanan (BBPOM) di Padang untuk mengetahui informasi lebih rinci.
    <br />Terimakasih');
    $this->email->send();
@@ -96,15 +114,16 @@ function __construct(){
   $data['hasil'] = $hasilperiksa;
  	$data['keterangan'] = $keterangan;
   $data['tglinput'] = $tglinput;
-
-
+  $data['foto'] = $this->upload->file_name;
+//var_dump($data);
+//die();
  	$this->db->trans_start();
 
  	$this->db->insert('thasilpemeriksaan', $data);
 
  	$this->db->trans_complete();
 
- 	if ($this->db->trans_status() === FALSE)
+ 	if (!$this->upload->do_upload('file_surat') AND $this->db->trans_status() === FALSE)
 			{
 				$this->session->set_flashdata("msg", "<div class='alert bg-danger' role='alert'>
 			    <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>

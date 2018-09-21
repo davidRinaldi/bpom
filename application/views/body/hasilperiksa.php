@@ -28,6 +28,7 @@
 										<th data-field="hp" data-sortable="true">Hasil Pemeriksaan</th>
 										<th data-field="ket" data-sortable="true">Keterangan</th>
 										<th data-field="tglpelaporan" data-sortable="true">Tanggal Pelaporan</th>
+										<th data-field="fot" data-sortable="true">Foto Dokumentasi</th>
 						    </tr>
                             </thead>
                             <tbody>
@@ -50,6 +51,8 @@
 										 echo $row->keterangan;?></td>
 										 <td><?php
 										  $format = date('d-m-Y', strtotime($row->tglinput)); echo $format; ?></td>
+											<td ><img src="<?php echo base_url(); ?>assets/dokpemeriksaan/<?php echo $row->foto; ?>" width="50" height="50" /></td>
+							        <td>
 						    </tr>
 						    <?php endforeach;?>
 						    </tbody>

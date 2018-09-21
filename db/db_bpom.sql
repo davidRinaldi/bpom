@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 14, 2018 at 08:09 AM
+-- Generation Time: Sep 21, 2018 at 05:02 PM
 -- Server version: 10.1.33-MariaDB
 -- PHP Version: 7.2.6
 
@@ -34,15 +34,18 @@ CREATE TABLE `thasilpemeriksaan` (
   `idsarana` int(11) NOT NULL,
   `hasil` varchar(50) NOT NULL,
   `Keterangan` varchar(50) NOT NULL,
-  `tglinput` date NOT NULL
+  `tglinput` date NOT NULL,
+  `foto` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `thasilpemeriksaan`
 --
 
-INSERT INTO `thasilpemeriksaan` (`idhasilpemeriksaan`, `idpemeriksaan`, `idsarana`, `hasil`, `Keterangan`, `tglinput`) VALUES
-(1, 4, 1, 'MK', 'OOOHHH', '2018-09-03');
+INSERT INTO `thasilpemeriksaan` (`idhasilpemeriksaan`, `idpemeriksaan`, `idsarana`, `hasil`, `Keterangan`, `tglinput`, `foto`) VALUES
+(1, 4, 1, 'MK', 'OOOHHH', '2018-09-03', 'semenpadang.jpg'),
+(9, 4, 1, 'MK', 'TES GALERYAA', '2018-09-21', 'komentar_penguji_1_0011.jpg'),
+(10, 4, 1, 'MK', 'OOOHHH', '2018-09-21', '0011.jpg');
 
 -- --------------------------------------------------------
 
@@ -163,8 +166,7 @@ CREATE TABLE `tpemeriksaan` (
 --
 
 INSERT INTO `tpemeriksaan` (`idpemeriksaan`, `nosurattugas`, `idkegiatan`, `tglpemeriksaan`, `idkabkota`, `tglsurattugas`) VALUES
-(4, 'X/IX/172/2018', 2, '2018-09-19', 19, '2018-09-03'),
-(5, 'XCC/VV/213', 1, '2018-09-12', 13, '2018-09-03');
+(4, 'X/IX/172/2018', 2, '2018-09-19', 19, '2018-09-03');
 
 -- --------------------------------------------------------
 
@@ -186,10 +188,7 @@ INSERT INTO `tpetugaspemeriksa` (`idpetugaspemeriksa`, `iduser`, `idpemeriksaan`
 (10, 1, 4),
 (11, 3, 4),
 (12, 10, 4),
-(13, 11, 4),
-(14, 1, 5),
-(15, 3, 5),
-(16, 11, 5);
+(13, 11, 4);
 
 -- --------------------------------------------------------
 
@@ -340,7 +339,7 @@ ALTER TABLE `tuser`
 -- AUTO_INCREMENT for table `thasilpemeriksaan`
 --
 ALTER TABLE `thasilpemeriksaan`
-  MODIFY `idhasilpemeriksaan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `idhasilpemeriksaan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `tjabatan`
@@ -370,13 +369,13 @@ ALTER TABLE `tkegiatan`
 -- AUTO_INCREMENT for table `tpemeriksaan`
 --
 ALTER TABLE `tpemeriksaan`
-  MODIFY `idpemeriksaan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `idpemeriksaan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `tpetugaspemeriksa`
 --
 ALTER TABLE `tpetugaspemeriksa`
-  MODIFY `idpetugaspemeriksa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `idpetugaspemeriksa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `tsarana`

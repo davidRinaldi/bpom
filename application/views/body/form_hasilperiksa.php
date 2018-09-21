@@ -17,7 +17,7 @@
 					<div class="panel-body">
 
 					<div class="col-md-6">
-					<form method="post" action="<?php echo site_url('hasilperiksa/save'); ?>">
+					<form method="post" action="<?php echo site_url('hasilperiksa/save'); ?>"  enctype="multipart/form-data">
 
 					<div class="form-group">
 						<label>No Surat Tugas</label>
@@ -40,10 +40,15 @@
 					</div>
 
 					<div class="form-group">
+						<label>Foto (jpg|jpeg|png)</label>
+						<input type="file" name="file_surat"  multiple="multiple"/>
+					</div>
+
+					<div class="form-group">
 						<label>Tanggal Input : <?php echo date('d-m-Y'); ?></label>
 						<input type="hidden" name="tglinput" value="<?php echo date('Y-m-d'); ?>">
 					</div>
-
+					
 					<button type="submit" class="btn btn-primary">Simpan</button>
 						<a href="<?php echo base_url();?>hasilperiksa/hasilperiksa_list"  class="btn btn-default">Batal</a>
 
